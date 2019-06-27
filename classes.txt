@@ -1,0 +1,49 @@
+using System;
+
+public class Book
+{
+	private string _title;
+	private string _publisher;
+	private string _author;
+	private int _pages;
+	private int _date;
+	
+	public Book(string title, string publisher, string author, int pages, int date)
+	{
+		_title = title;
+		_publisher = publisher;
+		_author = author;
+		_pages = pages;
+		_date = date;
+	}
+	
+	public void Details()
+	{
+		Console.WriteLine("Title: " + _title);
+		Console.WriteLine("Publisher: " + _publisher);
+		Console.WriteLine("Author: " + _author);
+		Console.WriteLine("Pages: " + _pages);
+		Console.WriteLine("Date: " + _date);
+	}
+	
+	public void Read()
+	{
+		Console.WriteLine("I have read {0} pages from the book '{1}'.",_pages,_title);
+	}
+}
+					
+public class Program
+{
+	public static void Main()
+	{
+		string title = "The Tragedy of Darth Plagueis the Wise";
+		string publisher = "Palpatine";
+		string author = "Plagueis";
+		int pages = 4;
+		int date = 1957;
+		Book plagueis = new Book(title, publisher, author, pages, date);
+		plagueis.Details();
+		Console.WriteLine("---------------------------------------------------------------------------------");
+		plagueis.Read();
+	}
+}
